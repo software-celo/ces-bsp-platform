@@ -24,7 +24,7 @@ To start a simple image build:
 
 [source,console]
 $: MACHINE=pixidl DISTRO=poky source ./setup-environment build
-$: bitbake pixi-qt5-demoimage
+$: bitbake pixi-qt-demoimage
 
 You can use any directory to host your build.
 
