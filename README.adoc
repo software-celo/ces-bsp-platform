@@ -23,9 +23,11 @@ At the end of the commands you have every metadata you need to start work with.
 To start a simple image build:
 
 [source,console]
-$: source ./setup-environment build
+$: MACHINE=pixidl DISTRO=poky source ./setup-environment build
 $: bitbake pixi-qt5-demoimage
 
 You can use any directory to host your build.
 
 The source code is checked out at `ces-bsp-platform/sources`.
+
+$MACHINE and $DISTRO must only be set at first run.
