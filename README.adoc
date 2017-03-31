@@ -1,6 +1,6 @@
 = FSL Community BSP for Christ Electronic Systems Devices
 
-System requirements can be found [here](http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#intro-requirements "Yocto System Requirements").
+Yocto System requirements can be found http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#intro-requirements[here]
 
 To get the BSP you need to have `repo` installed and use it as:
 
@@ -41,4 +41,4 @@ You can use any directory to host your build.
 
 The source code is checked out at `ces-bsp-platform/sources`.
 
-For further information refer to the [Yocto Project Reference Manual](http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html).
+For further information refer to the http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html[Yocto Project Reference Manual].
