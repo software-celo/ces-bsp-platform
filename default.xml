@@ -13,6 +13,7 @@
   <project remote="yocto" revision="32d4482f8f0e77ba4e03e7cf4e0970303351e101" name="meta-freescale" path="sources/meta-freescale"/>
 
   <project remote="oe" revision="1efa5d623bc64659b57389e50be2568b1355d5f7" name="meta-openembedded" path="sources/meta-openembedded"/>
+  <project remote="qt5" revision="3601fd2c5306ac6d5d0d536e0be8cbb90da9b4c1" name="meta-qt5" path="sources/meta-qt5"/>
 
   <project remote="ces" revision="morty" name="meta-ces" path="sources/meta-ces">
 	<linkfile dest="README" src="base/README"/>
