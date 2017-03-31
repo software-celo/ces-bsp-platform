@@ -1,5 +1,7 @@
 = FSL Community BSP for Christ Electronic Systems Devices
 
+System requirements can be found [here](http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#intro-requirements "Yocto System Requirements").
+
 To get the BSP you need to have `repo` installed and use it as:
 
 Install the `repo` utility:
@@ -20,14 +22,23 @@ $: repo sync
 
 At the end of the commands you have every metadata you need to start work with.
 
-To start a simple image build:
+To create a new Yocto build directory:
 
 [source,console]
 $: MACHINE=pixidl DISTRO=poky source ./setup-environment build
+
+To use an existing Yocto build directory:
+
+[source,console]
+source ./setup-environment build
+
+To start a simple image build:
+
+[source,console]
 $: bitbake pixi-qt-demoimage
 
 You can use any directory to host your build.
 
 The source code is checked out at `ces-bsp-platform/sources`.
 
-$MACHINE and $DISTRO must only be set at first run.
+For further information refer to the [Yocto Project Reference Manual](http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html).
