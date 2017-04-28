@@ -35,7 +35,7 @@ source ./setup-environment build
 To start a simple image build:
 
 [source,console]
-$: bitbake pixi-qt-demoimage
+$: bitbake ces-qt-demoimage
 
 You can use any directory to host your build.
 
