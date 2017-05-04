@@ -27,6 +27,8 @@ To create a new Yocto build directory:
 [source,console]
 $: MACHINE=pixidl DISTRO=poky source ./setup-environment build
 
+(Available machines are: pixidl, crixq)
+
 To use an existing Yocto build directory:
 
 [source,console]
