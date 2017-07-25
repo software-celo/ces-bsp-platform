@@ -25,9 +25,9 @@ At the end of the commands you have every metadata you need to start work with.
 To create a new Yocto build directory:
 
 [source,console]
-$: MACHINE=pixidl DISTRO=poky source ./setup-environment build
+$: MACHINE=pixi-cdl100 DISTRO=poky source ./setup-environment build
 
-(Available machines are: pixidl, crixq)
+(Available machines are for example: pixi-cdl100, crix-cq100, crix-arq100)
 
 To use an existing Yocto build directory:
 
