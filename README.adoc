@@ -25,9 +25,14 @@ At the end of the commands you have every metadata you need to start work with.
 To create a new Yocto build directory:
 
 [source,console]
-$: MACHINE=pixi-cdl100 DISTRO=poky source ./setup-environment build
+$: MACHINE=pixi-cdl100 DISTRO=ces-framebuffer source ./setup-environment build
 
-(Available machines are for example: pixi-cdl100, crix-cq100, crix-arq100)
+(Available machines are for example: pixi-cdl100, crix-cq100, crix-arq100;)
+
+Christ currently maintains two distros (ces-x11 and ces-framebuffer):
+
+* ces-x11 is used for x11 based images (ces-x11-chromeimage)
+* ces-framebuffer is used for qt/eglfs based images (ces-qt-demoimage)
 
 > Please pay attention when upgrading from the old naming scheme (crixq/pixidl).
 > The devicetree name was also changed, so be sure to upgrade the
