@@ -52,4 +52,7 @@ You can use any directory to host your build.
 
 The source code is checked out at `ces-bsp-platform/sources`.
 
+> In order to build the ces-x11-chromeimage you need a powerful machine.
+> 4GB RAM are reported to be not enough to build chromium. So a minimum of 8GB is recommended to successfully build an image containing chromium.
+
 For further information refer to the http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html[Yocto Project Reference Manual].
