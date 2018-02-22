@@ -6,19 +6,27 @@
   <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
   <remote fetch="https://github.com/Freescale" name="freescale"/>
   <remote fetch="https://github.com/openembedded" name="oe"/>
+  <remote fetch="https://github.com/software-celo" name="ces"/>
+  <remote fetch="https://github.com/meta-qt5" name="qt5"/>
+  <remote fetch="https://github.com/OSSystems" name="oss"/>
+  <remote fetch="https://github.com/imyller" name="node"/>
 
-  <project remote="yocto" revision="rocko" name="poky" path="sources/poky"/>
-  <project remote="yocto" revision="rocko" name="meta-freescale" path="sources/meta-freescale"/>
+  <project remote="yocto" revision="342fbd6a3e57021c8e28b124b3adb241936f3d9d" name="poky" path="sources/poky"/>
+  <project remote="yocto" revision="32bbb02092c51547c679f66a2a0df31e0dc4108f" name="meta-freescale" path="sources/meta-freescale"/>
 
-  <project remote="oe" revision="rocko" name="meta-openembedded" path="sources/meta-openembedded"/>
+  <project remote="oe" revision="a65c1acb1822966c3553de9fc98d8bb6be705c4e" name="meta-openembedded" path="sources/meta-openembedded"/>
 
-  <project remote="freescale" revision="rocko" name="fsl-community-bsp-base" path="sources/base">
-	<linkfile dest="README" src="README"/>
-	<linkfile dest="setup-environment" src="setup-environment"/>
+  <project remote="qt5" revision="db881bb4917628ad3eb1fa7c4f27915cf2ae60f4" name="meta-qt5" path="sources/meta-qt5"/>
+  <project remote="oss" revision="a413b4f6608eac46b72a3a79dcada0767fe4cf58" name="meta-browser" path="sources/meta-browser"/>
+  <project remote="node" revision="eec531e97a17bfd406f3bf76dee4057dcf5286a4" name="meta-nodejs" path="sources/meta-nodejs"/>
+
+  <project remote="ces" revision="rocko" name="meta-ces" path="sources/meta-ces">
+	<linkfile dest="README" src="base/README"/>
+	<linkfile dest="setup-environment" src="base/setup-environment"/>
   </project>
 
-  <project remote="freescale" revision="rocko" name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
-  <project remote="freescale" revision="rocko" name="meta-freescale-distro" path="sources/meta-freescale-distro"/>
-  <project remote="freescale" revision="rocko" name="Documentation" path="sources/Documentation"/>
+  <project remote="freescale" revision="1d6d5961dbf82624b28bb318b4950a64abc31d12" name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
+  <project remote="freescale" revision="0ec6d7e206705702b5b534611754de0787f92b72" name="meta-freescale-distro" path="sources/meta-freescale-distro"/>
+  <project remote="freescale" revision="5f7341e7fa3af8aaf09504938056cb8e83485dc0" name="Documentation" path="sources/Documentation"/>
 
 </manifest>
