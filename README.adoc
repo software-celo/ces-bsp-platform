@@ -1,4 +1,6 @@
-= FSL Community BSP
+= FSL Community BSP for Christ Electronic Systems Devices
+
+Yocto System requirements can be found http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#intro-requirements[here]
 
 To get the BSP you need to have `repo` installed and use it as:
 
@@ -13,55 +15,60 @@ Download the BSP source:
 
 [source,console]
 $: PATH=${PATH}:~/bin
-$: mkdir fsl-community-bsp
-$: cd fsl-community-bsp
-$: repo init -u https://github.com/Freescale/fsl-community-bsp-platform -b rocko
+$: mkdir ces-bsp-platform
+$: cd ces-bsp-platform
+$: repo init -u https://github.com/software-celo/ces-bsp-platform -b rocko
 $: repo sync
 
 At the end of the commands you have every metadata you need to start work with.
 
+To create a new Yocto build directory:
+
+[source,console]
+$: MACHINE=pixi-cdl100 DISTRO=ces-fb source ./setup-environment build
+
+Available machines are:
+
+* pixi-cdl100
+* pixi-cdl200
+* pixi-cq100
+* pixi-cq200
+* crix-cdl100
+* crix-cq100
+* crix-arq100
+* blix-bdl100
+* blix-bq100
+
+Christ currently maintains two distros (ces-x11 and ces-fb):
+
+* ces-x11 is used for x11 based images (ces-chromium-demoimage)
+* ces-fb is used for qt/eglfs based images (ces-qt-demoimage)
+
+> Please pay attention when upgrading from the old naming scheme (crixq/pixidl).
+> The devicetree name was also changed, so be sure to upgrade the
+> u-boot environment or the whole bootloader along with your image!
+
+> Before upgrading to yocto 2.4 (rocko), please contact us (linux@christ-es.de) for
+> a special version of CURT, which is able to migrate your system properly. Please
+> do NOT mix morty/rocko U-Boot and devicetrees! These are incompatible and will
+> definitely break your systems until you deploy a complete update.
+
+To use an existing Yocto build directory:
+
+[source,console]
+source ./setup-environment build
+
 To start a simple image build:
 
 [source,console]
-$: source ./setup-environment build
-$: bitbake core-image-minimal
+$: bitbake ces-qt-demoimage
 
 You can use any directory to host your build.
 
-The source code is checked out at `fsl-community-bsp/sources`.
+The source code is checked out at `ces-bsp-platform/sources`.
 
-== Contributing
+> In order to build the ces-chromium-demoimage you need a powerful machine.
+> The chromium recipe says: "The linker step requires at least 8 GB RAM." Or turn
+> on the component-build PACKAGECONFIG.
 
-To contribute to this layer you should send the patches for review to the mailing list.
-
-Mailing list::
-    https://lists.yoctoproject.org/listinfo/meta-freescale
-
-Source code::
-    https://github.com/Freescale/fsl-community-bsp-platform
-
-When creating patches, please use something like:
-
-[source,console]
-$: git format-patch -s --subject-prefix='fsl-community-bsp-platform][PATCH][rocko' origin
-
-When sending patches, please use something like:
-
-[source,console]
-$: git send-email --to meta-freescale@yoctoproject.org <generated patch>
-
-== Using Development and Testing Branches
-
-Replace the `repo init` command above with one of the following:
-
-master:: For developers
-+
-[source,console]
-$: repo init -u https://github.com/Freescale/fsl-community-bsp-platform -b master
-
-master-next:: For intrepid developers and testers
-+
-Patches are typically merged into master-next and then are merged into master after a testing and comment period. It's possible that master-next has something you want or need. But it's also possible that using master-next breaks something that was working before. Use with caution.
-
-[source,console]
-$: repo init -u https://github.com/Freescale/fsl-community-bsp-platform -b master-next
+For further information refer to the http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html[Yocto Project Reference Manual].
