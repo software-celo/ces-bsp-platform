@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
-  <default sync-j="4" revision="master"/>
-
+  <default revision="master" sync-j="16"/>
   <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
-  <remote fetch="https://github.com/Freescale" name="freescale"/>
   <remote fetch="https://github.com/openembedded" name="oe"/>
+  <remote fetch="https://github.com/meta-qt5" name="qt5"/>
+  <remote fetch="https://github.com/software-celo" name="ces"/>
 
-  <project remote="yocto" revision="master" name="poky" path="sources/poky"/>
-  <project remote="yocto" revision="master" name="meta-freescale" path="sources/meta-freescale"/>
 
-  <project remote="oe" revision="master" name="meta-openembedded" path="sources/meta-openembedded"/>
+  <project remote="yocto" revision="01b8a8b54bc569e5ef3f5e6fc6abcee365ab25d9" name="poky" path="sources/poky"/>
+  <project remote="yocto" revision="7f92a041728ad401f3b4a6025f96e493a20b229a" name="meta-freescale" path="sources/meta-freescale"/>
 
-  <project remote="freescale" revision="master" name="fsl-community-bsp-base" path="sources/base">
-	<linkfile dest="README" src="README"/>
+  <project remote="oe" revision="8d5dcd6522e9d15e68637b6d7dda0401f9bb91d0" name="meta-openembedded" path="sources/meta-openembedded"/>
+
+  <project remote="qt5" revision="12ea469918bcb73605b9c1e5080351f1189c0f17" name="meta-qt5" path="sources/meta-qt5"/>
+
+  <project remote="ces" revision="warrior" name="meta-ces" path="sources/meta-ces">
+	<linkfile dest="README"	src="base/README"/>
 	<linkfile dest="setup-environment" src="setup-environment"/>
   </project>
-
-  <project remote="freescale" revision="master" name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
-  <project remote="freescale" revision="master" name="meta-freescale-distro" path="sources/meta-freescale-distro"/>
-  <project remote="freescale" revision="master" name="Documentation" path="sources/Documentation"/>
-
 </manifest>
