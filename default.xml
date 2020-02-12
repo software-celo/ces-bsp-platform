@@ -3,7 +3,7 @@
   <default revision="master" sync-j="16"/>
   <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
   <remote fetch="https://github.com/openembedded" name="oe"/>
-  <remote fetch="https://github.com/meta-qt5" name="qt5"/>
+  <remote fetch="https://code.qt.io/yocto/meta-qt5" name="qt5"/>
   <remote fetch="https://github.com/software-celo" name="ces"/>
 
 
@@ -12,7 +12,7 @@
 
   <project remote="oe" revision="8d5dcd6522e9d15e68637b6d7dda0401f9bb91d0" name="meta-openembedded" path="sources/meta-openembedded"/>
 
-  <project remote="qt5" revision="12ea469918bcb73605b9c1e5080351f1189c0f17" name="meta-qt5" path="sources/meta-qt5"/>
+  <project remote="qt5" revision="12cc756c7948a90367473f0a52dd2fe2b519dd24" name="meta-qt5" path="sources/meta-qt5"/>
 
   <project remote="ces" revision="warrior" name="meta-ces" path="sources/meta-ces">
 	<linkfile dest="README"	src="base/README"/>
