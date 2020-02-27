@@ -48,7 +48,8 @@ Christ currently included this distro (ces-x11) , but will be removed in the fut
 > When upgrading or switching between rocko and warrior images make sure to use the
 > corresponding version of CURT and always update the U-Boot as well.
 > Please do NOT mix rocko/warrior U-Boot and devicetrees! These are incompatible and will
-> definitely break your systems until you deploy a complete update.
+> definitely break your system until you deploy a complete update.
+> Refer to our https://www.christ-es.com/index.php?id=650[FAQ] as well.
 
 To use an existing Yocto build directory:
 
