@@ -5,7 +5,7 @@ Yocto System requirements can be found https://www.yoctoproject.org/docs/current
 For an Ubuntu Build Host you need the following packages:
 
 [source,console]
-$: sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
+$: sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib g++-multilib \
 build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
 xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
 pylint3 xterm
@@ -45,13 +45,9 @@ Christ currently included this distro (ces-x11) , but will be removed in the fut
 
 * ces-x11 is used for x11 based images (ces-chromium-demoimage)
 
-> Please pay attention when upgrading from the old naming scheme (crixq/pixidl).
-> The devicetree name was also changed, so be sure to upgrade the
-> u-boot environment or the whole bootloader along with your image!
-
-> Before upgrading to yocto 2.7 (warrior), please contact us (linux@christ-es.de) for
-> a special version of CURT, which is able to migrate your system properly. Please
-> do NOT mix rocko/warrior U-Boot and devicetrees! These are incompatible and will
+> When upgrading or switching between rocko and warrior images make sure to use the
+> corresponding version of CURT and always update the U-Boot as well.
+> Please do NOT mix rocko/warrior U-Boot and devicetrees! These are incompatible and will
 > definitely break your systems until you deploy a complete update.
 
 To use an existing Yocto build directory:
@@ -73,7 +69,7 @@ The source code is checked out at `ces-bsp-platform/sources`.
 > on the component-build PACKAGECONFIG.
 > An increasement of the SWAP partition could be helpful in some cases.
 
-Depending on your system performance, the build process can take several hours. The most relevant image will be located per default in:
+Depending on your system performance, the build process can take several hours. The image will be located in:
 tmp-glibc/deploy/images/$MACHINE/
 
 For further information refer to the http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html[Yocto Project Reference Manual].
