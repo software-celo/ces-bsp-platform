@@ -3,7 +3,7 @@
   <default revision="master" sync-j="16"/>
   <remote fetch="https://git.yoctoproject.org/git" name="yocto"/>
   <remote fetch="https://github.com/openembedded" name="oe"/>
-  <remote fetch="https://code.qt.io/yocto/meta-qt5" name="qt5"/>
+  <remote fetch="https://code.qt.io/yocto" name="qt5"/>
   <remote fetch="https://github.com/software-celo" name="ces"/>
 
 
