@@ -25,7 +25,7 @@ Download the BSP source:
 $: PATH=${PATH}:~/bin
 $: mkdir ces-bsp-platform
 $: cd ces-bsp-platform
-$: repo init -u https://github.com/software-celo/ces-bsp-platform -b warrior
+$: repo init -u https://github.com/software-celo/ces-bsp-platform -b dunfell
 $: repo sync
 
 At the end of the commands you have every metadata you need to start work with.
@@ -35,20 +35,17 @@ To create a new Yocto build directory:
 [source,console]
 $: MACHINE=pixi-cdl100 DISTRO=ces-fb source ./setup-environment build
 
-Refer here for https://github.com/software-celo/meta-ces/tree/warrior[supported MACHINES]
+Refer here for https://github.com/software-celo/meta-ces/tree/dunfell[supported MACHINES]
 
 Christ currently maintains one distro (ces-fb)
 
 * ces-fb is used for qt/eglfs based images (ces-qt-demoimage)
 
-Christ currently included this distro (ces-x11) , but will be removed in the future
-
-* ces-x11 is used for x11 based images (ces-chromium-demoimage)
-
-> When upgrading or switching between rocko and warrior images make sure to use the
+> When upgrading or switching between rocko and warrior or dunfell images make sure to use the
 > corresponding version of CURT and always update the U-Boot as well.
 > Please do NOT mix rocko/warrior U-Boot and devicetrees! These are incompatible and will
 > definitely break your system until you deploy a complete update.
+> warrior and dunfell are completely compatible concerning CURT.
 > Refer to our https://www.christ-es.com/index.php?id=650[FAQ] as well.
 
 To use an existing Yocto build directory:
@@ -65,10 +62,7 @@ You can use any directory to host your build.
 
 The source code is checked out at `ces-bsp-platform/sources`.
 
-> In order to build the ces-chromium-demoimage you need a powerful machine.
-> The chromium recipe says: "The linker step requires at least 16 GB RAM." Or turn
-> on the component-build PACKAGECONFIG.
-> An increasement of the SWAP partition could be helpful in some cases.
+> When building the ces-qt-demoimage at least 16GB RAM are recommended. It should work with less, but it might fail if e.g. two big packages are compiled at the same time. Try to build again (maybe multiple times), use `bitbake -k` or increase your SWAP parition.
 
 Depending on your system performance, the build process can take several hours. The image will be located in:
 tmp-glibc/deploy/images/$MACHINE/
