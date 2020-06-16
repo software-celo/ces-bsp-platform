@@ -1,14 +1,8 @@
 = FSL Community BSP for Christ Electronic Systems Devices
 
-Yocto System requirements can be found https://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#ref-manual-system-requirements[here] and required packages for the build https://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#required-packages-for-the-build-host[here]
+Yocto System requirements can be found https://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#ref-manual-system-requirements[here].
 
-For an Ubuntu Build Host you need the following packages:
-
-[source,console]
-$: sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib g++-multilib \
-build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
-xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
-pylint3 xterm
+For an Ubuntu 16.04 Build Host you need the packages specified https://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html#required-packages-for-the-build-host[here].
 
 To get the BSP you need to have `repo` installed and use it as:
 
@@ -56,7 +50,12 @@ To use an existing Yocto build directory:
 [source,console]
 source ./setup-environment build
 
-To start a simple image build:
+If using a fresh docker image, your locale might not be set to en_US.UTF8.
+Follow the instructions https://github.com/RobertBerger/meta-mainline/issues/8[here] to set it, otherwise your build will error.
+
+The build should be started as a normal user and NOT as a superuser. The coreutils build will error otherwise.
+If you're building from a docker image, you're logged-in as a superuser by default. Create a new user and switch to it before starting the build.
+Finally, to start a simple image build:
 
 [source,console]
 $: bitbake ces-qt-demoimage
